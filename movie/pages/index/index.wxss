@@ -1,0 +1,17 @@
+/**index.wxss**/
+@import "/common/style/common.wxss";
+.container{
+  height:30rpx;
+}
+.bc_green{
+  background:green;
+}
+.bc_red{
+  background:red;
+}
+.bc_yellow{
+  background:yellow;
+}
+.bc_blue{
+  background:blue;
+}

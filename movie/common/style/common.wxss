@@ -1,0 +1,6 @@
+page {
+  height: 100%;
+}
+.scroll-view-item{
+  height:400rpx;
+}

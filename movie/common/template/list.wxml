@@ -1,0 +1,4 @@
+<template name="movie-list">
+  <scroll-view scroll-y="true" style="height: 100%" lower-threshold="300" bindscrolltolower="scrollHandler">
+  </scroll-view>
+</template>

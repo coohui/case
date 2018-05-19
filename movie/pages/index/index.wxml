@@ -1,0 +1,34 @@
+<!--index.wxml-->
+
+<open-data type="groupName" open-gid="xxxxxx"></open-data>
+<open-data type="userAvatarUrl"></open-data>
+<open-data type="userGender" lang="zh_CN"></open-data>
+
+<button bindtap="getLocal">获取地理位置</button>
+
+<button bindtap="scan">扫一扫</button>
+
+<scroll-view scroll-y scroll-y="true" style="height: 100%" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}" >
+  <view class="container">
+    <text>{{ msg }}</text>
+  </view>
+    <view id="green" class="scroll-view-item bc_green">444</view>
+    <view id="red"  class="scroll-view-item bc_red">55</view>
+    <view id="yellow" class="scroll-view-item bc_yellow">66</view>
+    <view id="blue" class="scroll-view-item bc_blue">77</view>
+  </scroll-view>
+
+  <view class="btn-area">
+    <button size="mini" bindtap="tap">click me to scroll into view </button>
+    <button size="mini" bindtap="tapMove">click me to scroll</button>
+  </view>
+
+  <view class="section section_gap">
+  <view class="section__title">horizontal scroll</view>
+  <scroll-view class="scroll-view_H" scroll-x style="width: 100%">
+    <view id="green" class="scroll-view-item_H bc_green"></view>
+    <view id="red"  class="scroll-view-item_H bc_red"></view>
+    <view id="yellow" class="scroll-view-item_H bc_yellow"></view>
+    <view id="blue" class="scroll-view-item_H bc_blue"></view>
+  </scroll-view>
+</view>
