@@ -11,7 +11,6 @@ Page({
   },
 
   onLoad(options) {
-    util.msgAlert('0');
     const { type } = options
     this.setData({
       type
@@ -20,7 +19,6 @@ Page({
   },
 
   saveData(data) {
-    util.msgAlert('1');
     let history = wx.getStorageSync('history') || []
 
     history = history.filter((item) => {
@@ -32,7 +30,6 @@ Page({
   },
 
   loadMovies() {
-    util.msgAlert('2');
     const { size, page, type } = this.data
 
     this.setData({
@@ -47,7 +44,6 @@ Page({
     wx.request({
       url: `${cfg.domain}/list?type=${type}&page=${page}&size=${size}`,
       success: (res) => {
-        util.msgAlert('3');
         const { data } = res.data
         const movies = this.data.movies || []
 

@@ -1,0 +1,4 @@
+<!--index.wxml-->
+<navigator url="/page/idcard/idcard?id=123446" hover-class="navigator-hover">下一步</navigator>
+
+<button bindtap="goto">身份录入</button>

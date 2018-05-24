@@ -1,0 +1,4 @@
+<button type="primary" bindtap="chooseImg">展示图片</button>
+<image class="img" src="{{chooseImg}}" />
+<input type="idcard" placeholder="身份证输入键盘" />
+<button bindtap="scan">扫一扫</button>
