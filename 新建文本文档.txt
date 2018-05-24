@@ -1,3 +1,12 @@
 cd 到当前文件夹
 然后npm i
 npm dev
+
+sublime 执行node
+1、找到tools-->build system-->new build system
+2、1 {
+2         "cmd": ["D://nodejs/node.exe","--use-strict", "--harmony", "$file"],
+3 
+4         "selector": "source.js"
+5 }
+3、Ctrl+B
