@@ -1,0 +1,3 @@
+cd 到当前文件夹
+然后npm i
+npm dev

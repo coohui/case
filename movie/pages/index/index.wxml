@@ -1,4 +1,9 @@
 <!--index.wxml-->
+<button type="primary" bindtap="chooseImg">展示图片</button>
+
+<image src="{{chooseImg}}" />
+
+<input type="idcard" placeholder="身份证输入键盘" />
 
 <open-data type="groupName" open-gid="xxxxxx"></open-data>
 <open-data type="userAvatarUrl"></open-data>
