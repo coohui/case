@@ -1,0 +1,95 @@
+@charset "utf-8";
+/* CSS Document */
+.changebg{animation:bg_change 0.5s infinite;-webkit-animation:bg_change 0.5s infinite;-ms-animation:bg_change 0.5s infinite;-o-animation:bg_change 0.5s infinite;-moz-animation:bg_change 0.5s infinite;}
+.changebg1{animation:bg_change1 0.5s infinite;-webkit-animation:bg_change1 0.5s infinite;-ms-animation:bg_change1 0.5s infinite;-o-animation:bg_change1 0.5s infinite;-moz-animation:bg_change1 0.5s infinite;}
+.big{/*text-align:center;width:100%;vertical-align:middle;*/position:relative}
+.big img{position:relative;-webkit-animation:changeBig  ease-out 1s;animation:changeBig  ease-out 1s; }
+.swing img{ position: absolute; left:50%; top:50%; margin:100px 0 0 190px;-webkit-animation:swing 1s linear infinite alternate;animation:swing 1s linear infinite alternate;}
+@-webkit-keyframes bg_change
+{
+from{ background:url(../img/1.jpg) top center no-repeat;}
+/*75%{ background:url(../userfiles/2bg_1.jpg) top center no-repeat;}*/
+to{background:url(../userfiles/2bg_1.jpg) top center no-repeat;}
+}
+
+@keyframes bg_change
+{
+0%{ background:url(../img/1.jpg) top center no-repeat;}
+75%{ background:url(../userfiles/2bg_1.jpg) top center no-repeat;}
+100%{background:url(../userfiles/2bg_2.jpg) top center no-repeat;}
+}
+@-moz-keyframes bg_change
+{
+0%{ background:url(../img/1.jpg) top center no-repeat;}
+75%{ background:url(../userfiles/2bg_1.jpg) top center no-repeat;}
+100%{background:url(../userfiles/2bg_2.jpg) top center no-repeat;}
+}
+
+@-o-keyframes bg_change
+{
+0%{ background:url(../img/1.jpg) top center no-repeat;}
+75%{ background:url(../userfiles/2bg_1.jpg) top center no-repeat;}
+100%{background:url(../userfiles/2bg_2.jpg) top center no-repeat;}
+}
+
+@-ms-keyframes bg_change
+{
+0%{ background:url(../img/1.jpg) top center no-repeat;}
+75%{ background:url(../userfiles/2bg_1.jpg) top center no-repeat;}
+100%{background:url(../userfiles/2bg_2.jpg) top center no-repeat;}
+}
+
+@-webkit-keyframes bg_change1
+{
+0%{ background:url(../img/03.jpg) top center no-repeat;}
+/*50%{background:url(../img/03_bg.jpg) top center no-repeat;}*/
+100%{background:url(../img/03_bg1.jpg) top center no-repeat;}
+}
+@keyframes bg_change1
+{
+0%{ background:url(../img/03.jpg) top center no-repeat;}
+50%{background:url(../img/03_bg.jpg) top center no-repeat;}
+100%{background:url(../img/03_bg1.jpg) top center no-repeat;}
+}
+
+@-moz-keyframes bg_change1
+{
+0%{ background:url(../img/03.jpg) top center no-repeat;}
+50%{background:url(../img/03_bg.jpg) top center no-repeat;}
+100%{background:url(../img/03_bg1.jpg) top center no-repeat;}
+}
+@-o-keyframes bg_change1
+{
+0%{ background:url(../img/03.jpg) top center no-repeat;}
+50%{background:url(../img/03_bg.jpg) top center no-repeat;}
+100%{background:url(../img/03_bg1.jpg) top center no-repeat;}
+}
+
+@-ms-keyframes bg_change1
+{
+0%{ background:url(../img/03.jpg) top center no-repeat;}
+50%{background:url(../img/03_bg.jpg) top center no-repeat;}
+100%{background:url(../img/03_bg1.jpg) top center no-repeat;}
+}
+
+@-webkit-keyframes changeBig
+{
+from{ width:0;height:0;}
+to{width:100%;height:auto;}
+}
+@keyframes changeBig
+{
+from{ width:0;height:0;}
+to{width:100%;height:auto;}
+}
+
+@-webkit-keyframes swing
+{
+from{transform:rotate(-10deg);-webkit-transform:rotate(-10deg)}
+to{transform:rotate(20deg);-webkit-transform:rotate(20deg)}
+}
+@keyframes swing
+{
+from{transform:rotate(-10deg);-webkit-transform:rotate(-10deg)}
+to{transform:rotate(20deg);-webkit-transform:rotate(20deg)}
+}

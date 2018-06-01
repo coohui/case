@@ -1,5 +1,5 @@
 <view class="container">
-  <view class="user-info">
+  <view class="user-info" style='background:red'>
     <image class="avatar" src="{{avatarUrl}}"></image>
     <text class="name">{{nickName}}</text>
   </view>

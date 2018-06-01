@@ -18,7 +18,6 @@ page {
   border-radius: 50%;
   margin-bottom: 20rpx;
   border: 1px solid #eee;
-
 }
 
 .name {
