@@ -1,0 +1,32 @@
+<!-- <view id="id" 
+  bindtouchmove="handletouchmove" 
+  class='demo' 
+  style='top:{{ballTop}}rpx; left: {{ballLeft}}rpx'>
+</view> -->
+
+<view class="canvasWrap">
+  <!-- <view class="axisWrap">
+      <view class="unlock-val"></view>
+      <view class="lock-val"></view>
+      <view class="upCircle"></view>
+      <view class="downCircle"></view>
+      <view class="tipsWrap"></view>
+      <view class="tipsWrap"></view>
+  </view> -->
+  
+  <view class="operation" bindtouchmove="touchmove" 
+  bindtouchstart="touchstart" bindtouchend="touchend"
+  style="left: {{left}}px;">
+    <view class="scaleWrap" wx:for="{{filterData}}" wx:key="index" wx:for-item="item">
+        <block wx:if="{{item.uVal}}">
+        <view class="scaleLine"></view>
+        <view class="scaleText">{{item.uVal}}</view>
+        </block>
+    </view>
+  </view> 
+  <view class="canvas">
+    <canvas canvas-id="canvas"
+    style="left: {{left}}px;width: 100%; height:100%">
+    </canvas>  
+  </view>
+</view> 

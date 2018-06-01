@@ -1,0 +1,177 @@
+page{
+  background: #3390f4;
+  overflow-x: hidden
+}
+.canvasWrap{
+  margin: 0 auto;
+  position: relative;
+  width: 400px;
+  height: 400px;
+  overflow: hidden;
+  z-index: 9;
+}
+.canvas ,.operation{
+  position: absolute;
+  width: 1680px; 
+  height: 300px;
+  left:0;
+  top:0;
+  z-index: 1;
+}
+.canvas{
+  background: #ff0;
+}
+.operation{
+  height: 100px;
+  top:300px;
+  z-index: 1;
+  border-top: solid 1px #70b2f8;
+}
+.scaleWrap{
+  float: left;
+  width: 80px;
+  height: 60px;
+  text-align: center;
+}
+.scaleLine{
+  margin: 0 auto;
+  width: 1px;
+  height: 10px;
+  background: #bbd9f9;
+}
+.scaleText{
+  margin-top: 10px;
+  font-size: 26rpx;
+  color: #bbd9f9;
+}
+/* .axisWrap{
+  position: absolute;
+  left: 200px;
+  bottom: 60px;
+  z-index: 99000000;
+  width: 8px;
+  height: 100px;
+  margin-left: -4px;
+} */
+/* page{}
+.demo{ width:60px; height:60px; background:#545345;box-shadow:2px 2px 10px #AAA;border-radius: 20px;position: absolute; } */
+/* .canvasWrap{
+  position: relative;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+  background: #3390f4
+}
+.canvas ,.operation{
+  position: absolute;
+  width: 302px; 
+  height: 520px;
+  left:0;
+  top:0;
+  z-index: 2;
+  border: solid 1px #000;
+}
+.operation{
+  height: 80px;
+  top:520px;
+  z-index: 1;
+  border-top: solid 1px #70b2f8;
+}
+.scaleWrap{
+  float: left;
+  width: 150px;
+  height: 80px;
+  text-align: center;
+}
+.scaleLine{
+  margin: 0 auto;
+  width: 1px;
+  height: 20px;
+  background: #bbd9f9;
+}
+.scaleText{
+  margin-top: 10px;
+  font-size: 26px;
+  color: #bbd9f9;
+} */
+/* page{
+  background: #3390f4
+}
+.canvasWrap{
+  margin: 0 auto;
+  position: relative;
+  width: 400px;
+  height: 320px;
+  overflow: hidden;
+  z-index: 99999999000;
+}
+.canvas ,.operation{
+  position: absolute;
+  width: 1680px; 
+  height: 260px;
+  left:0;
+  top:0;
+  z-index: 20000;
+}
+.operation{
+  height: 60px;
+  top:260px;
+  z-index: 1;
+  border-top: solid 1px #70b2f8;
+}
+.scaleWrap{
+  float: left;
+  width: 80px;
+  height: 60px;
+  text-align: center;
+}
+.scaleLine{
+  margin: 0 auto;
+  width: 1px;
+  height: 10px;
+  background: #bbd9f9;
+}
+.scaleText{
+  margin-top: 10px;
+  font-size: 26rpx;
+  color: #bbd9f9;
+}
+.axisWrap{
+  position: absolute;
+  left: 200px;
+  bottom: 60px;
+  z-index: 99000000;
+  width: 8px;
+  margin-left: -4px;
+  background: red;
+}
+.unlock-val{
+  height: 100px;
+  background: #ff5555;
+}
+.lock-val{
+  height: 60px;
+  background: #0074f1
+}
+.upCircle{
+  position: absolute;
+  top:-8px;
+  left: -8px;
+  width: 16px;
+  height: 16px;
+  border: 4px solid #ff5555;
+  border-radius: 50%;
+  z-index: 9999;
+  background: #fff;
+}
+.downCircle{
+  position: absolute;
+  top:76px;
+  left: -8px;
+  width: 16px;
+  height: 16px;
+  border: 4px solid #0074f1;
+  border-radius: 50%;
+  z-index: 9999;
+  background: #fff;
+} */

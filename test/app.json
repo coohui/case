@@ -17,19 +17,19 @@
     "list": [
       {
         "pagePath": "page/index/index",
-        "text": "首页",
+        "text": "数量",
         "iconPath": "assets/image/index.png",
         "selectedIconPath": "assets/image/index-active.png"
       },
       {
         "pagePath": "page/list/list",
-        "text": "分类",
+        "text": "价值",
         "iconPath": "assets/image/subject.png",
         "selectedIconPath": "assets/image/subject-active.png"
       },
       {
         "pagePath": "page/user/user",
-        "text": "我的",
+        "text": "个人中心",
         "iconPath": "assets/image/user.png",
         "selectedIconPath": "assets/image/user-active.png"
       }
