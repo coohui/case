@@ -10,3 +10,6 @@ sublime 执行node
 4         "selector": "source.js"
 5 }
 3、Ctrl+B
+
+.vue文件高亮
+Vue Syntax Highlight
