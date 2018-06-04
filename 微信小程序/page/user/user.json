@@ -1,5 +1,8 @@
 {
-  "window": {
-    "navigationBarTitleText": "用户中心"
-  }
+    "navigationBarBackgroundColor": "rgba(0,0,0,0)",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "test",
+    "backgroundColor": "#f00",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": false
 }
