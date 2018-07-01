@@ -102,7 +102,7 @@ let router = new VueRouter({
         default: document,
         slider: slider
       }
-    }
+    } 
   ]
 })
 
