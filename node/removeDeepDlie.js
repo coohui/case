@@ -2,7 +2,7 @@
   把该文件放到当前磁盘
 */
 var fs = require('fs');
-var removePath = '/Users/Administrator/Desktop/file';  //要删除的路径
+var removePath = 'D:/工作/ldMobile/h5/design/node_modules';  //要删除的路径
 var removeDir = function(pathNew, pathOrig) {
     fs.readdirSync(pathNew).forEach(function(file, index){
         var curPath = pathNew + '/' + file;
@@ -19,3 +19,8 @@ var removeDir = function(pathNew, pathOrig) {
 }
 removeDir(removePath, removePath);
 console.log("执行完成！");
+/*
+sublime上使用说明，先确保sublime配置了执行node的环境，
+removePath是需要删除的文件夹目录
+然后把该文件放到当前磁盘，按ctrl+b执行就可以了
+*/
