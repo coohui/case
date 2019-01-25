@@ -65,58 +65,58 @@ module.exports = {
                     path.resolve(__dirname, 'src')
                 ]
             },
-    //         {
-    //             test: /\.scss$/,
-    //             use: [
-    //                 'style-loader' ,
-    //                 {
-    //                     loader: 'css-loader',
-    //                     options: {
-    //                         module: true,
-    //                         localIdentName: '[name]-[local]_[hash:base64:6]'
-    //                     }
-    //                 },
-    //                 'sass-loader'
-    //             ],
-    //             exclude: [
-    //                 path.resolve(__dirname, 'node_modules'),
-    //                 path.resolve(__dirname, 'src/common')
-    //             ]
-    //         },
-    //         {
-    //             test: /\.scss$/,
-    //             use: [ 'style-loader', 'css-loader', 'sass-loader' ],
-    //             include: [
-    //                 path.resolve(__dirname, 'node_modules'),
-    //                 path.resolve(__dirname, 'src/common')
-    //             ]
-    //         },
-    //         {
-    //             test: /\.less$/,
-    //             use: [
-    //                 'style-loader' ,
-    //                 {
-    //                     loader: 'css-loader',
-    //                     options: {
-    //                         module: true,
-    //                         localIdentName: '[name]-[local]_[hash:base64:6]'
-    //                     }
-    //                 },
-    //                 'less-loader'
-    //             ],
-    //             exclude: [
-    //                 path.resolve(__dirname, 'node_modules'),
-    //                 path.resolve(__dirname, 'src/common')
-    //             ]
-    //         },
-    //         {
-    //             test: /\.less$/,
-    //             use: [ 'style-loader', 'css-loader', 'less-loader' ],
-    //             include: [
-    //                 path.resolve(__dirname, 'node_modules'),
-    //                 path.resolve(__dirname, 'src/common')
-    //             ]
-    //         },
+            {
+                test: /\.scss$/,
+                use: [
+                    'style-loader' ,
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            module: true,
+                            localIdentName: '[name]-[local]_[hash:base64:6]'
+                        }
+                    },
+                    'sass-loader'
+                ],
+                exclude: [
+                    path.resolve(__dirname, 'node_modules'),
+                    path.resolve(__dirname, 'src/common')
+                ]
+            },
+            {
+                test: /\.scss$/,
+                use: [ 'style-loader', 'css-loader', 'sass-loader' ],
+                include: [
+                    path.resolve(__dirname, 'node_modules'),
+                    path.resolve(__dirname, 'src/common')
+                ]
+            },
+            {
+                test: /\.less$/,
+                use: [
+                    'style-loader' ,
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            module: true,
+                            localIdentName: '[name]-[local]_[hash:base64:6]'
+                        }
+                    },
+                    'less-loader'
+                ],
+                exclude: [
+                    path.resolve(__dirname, 'node_modules'),
+                    path.resolve(__dirname, 'src/common')
+                ]
+            },
+            {
+                test: /\.less$/,
+                use: [ 'style-loader', 'css-loader', 'less-loader' ],
+                include: [
+                    path.resolve(__dirname, 'node_modules'),
+                    path.resolve(__dirname, 'src/common')
+                ]
+            },
 
             // file-loader:
             //     1. 把你的资源移动到输出目录
