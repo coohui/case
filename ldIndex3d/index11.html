@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title></title>
+</head>
+<body>
+<div class="banner">
+	<div class="ban-container">
+	  <div class="ban-inner-circle"></div>
+	  <div class="ban-content-wrap">
+	  	<div class="ban-content" id="banContent"></div>
+	  </div>
+	</div>
+</div>
+</body>
+</html>
+<style type="text/css">
+	* {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		box-sizing: border-box;
+	}
+	.banner{
+		width: 100%;
+		height: 600px;
+		background-image: url(banner.png);
+	}
+	.ban-container {
+	  position: relative;
+	  margin: 0 auto;
+	  width: 1366px;
+	  height: 100%;
+	  padding-right: 86px;
+	}
+	.ban-content-wrap{
+		position: absolute;
+		right: 84px;
+		bottom: -122px;
+		z-index: 1;
+		width: 588px;
+		height: 588px;
+		-webkit-perspective:  2800px;
+		-moz-perspective: 2800px;
+		-ms-perspective: 2800px;
+		-o-perspective: 2800px;
+		perspective: 2800px;
+		transform-origin: center;
+	}
+	.ban-inner-circle{
+		position: absolute;
+	  right: -76px;
+	  bottom: 18px;
+	  width: 943px;
+	  height: 592px;
+		background: url(inner_circle.png) center no-repeat;
+		background-size: contain;
+		z-index: 999;
+	}
+	.ban-content{
+		width: 100%;
+		height: 100%;
+		border-radius: 50%;
+		background: rgba(49, 82, 215, 0.2);
+	  transform-style: preserve-3d;
+	  perspective: 600px;
+	  transform-origin: center;
+		border: 1px solid #2586fb;
+		transition: 1s;
+		transform: rotateX(60deg) rotateY(0deg) rotateZ(0deg) translateZ(30px);
+	}
+	.ban-small-circle-wrap{
+		position: absolute;
+		width: 66px;
+		height: 588px;
+		left: 261px;
+		top: 0;
+		z-index: 2;
+		text-align: center;
+		transform: rotate(360deg);
+	}
+	.ban-small-circle{
+		position: absolute;
+		width: 66px;
+		height: 66px;
+		left: 0px;
+		top: 0px;
+		z-index: 9;
+		background: #4e7fce;
+		border-radius: 50%;
+	}
+	@keyframes scale{
+	  0%{
+	    transform:scale(0.5);
+	    -ms-transform:scale(0.5);     /* IE 9 */
+	    -moz-transform:scale(0.5);     /* Firefox */
+	    -webkit-transform:scale(0.5); /* Safari ºÍ Chrome */
+	    -o-transform:scale(0.5);
+	  }
+
+	  100%{
+	    transform:scale(1);
+	    -ms-transform:scale(1); /* IE 9 */
+	    -moz-transform:scale(1); /* Firefox */
+	    -webkit-transform:scale(1); /* Safari ºÍ Chrome */
+	    -o-transform:scale(1);
+	  }
+	}
+</style>
+ <script type="text/javascript">
+	window.onload = function() {
+	 	var content = document.getElementById('banContent');
+	 	var num = 7;
+	  calSmallCircleLoc(content, num);
+	  rotating(content, num);
+	}
+
+	function calSmallCircleLoc(content, num) {
+	 	var bigW = 588;
+	 	var r = parseInt(bigW / 2);
+	 	var html = '';
+	 	var runkeyframes = '';
+
+	 	for (var i = 0, len = num; i < len; i++) {
+	 		var startAngle = Math.round(360 / num) * i;
+	 	  var angle = Math.round(360 / num) * (i + 1);
+	 	  // 最后一个设置360deg
+	 	  angle = (i === num - 1) ? 360 : angle;
+	 	  html += '<div class="ban-small-circle-wrap"'+ 
+	 	    'style="transform: rotate(' + startAngle + 'deg)">' +
+		    	'<div class="ban-small-circle bs-circle' + i + '"'+
+		      'style="transform: scale(0.5)"></div>' +
+		    '</div>';
+      // 初始化动画帧
+      runkeyframes += '@keyframes r'+ i +'{' +
+				'0% {' +
+				  'transform:rotateX(60deg) rotateY(0deg) rotateZ(' + startAngle + 'deg) translateZ(30px);' +
+				  '-ms-transform: rotateX(60deg) rotateY(0deg) rotateZ(' + startAngle + 'deg) translateZ(30px);' +
+				'}' +
+				'100% {' +
+				  'transform:rotateX(60deg) rotateY(0deg) rotateZ(' + angle + 'deg) translateZ(30px);' +
+				  '-ms-transform: rotateX(60deg) rotateY(0deg) rotateZ(' + angle + 'deg) translateZ(30px);' +
+				'}' +
+			'}'
+	 	};
+	 	content.innerHTML = html;
+		// 创建style标签
+		var style = document.createElement('style');
+		// 设置style属性
+		style.type = 'text/css';
+		// 将 keyframes样式写入style内
+		style.innerHTML = runkeyframes;
+		// 将style样式存放到head标签
+		document.getElementsByTagName('head')[0].appendChild(style);
+	}
+
+	function rotateNext(content, num, index) {
+	 	index %= num
+	 	var smallCircle = content.getElementsByClassName('ban-small-circle');
+	 	content.style.animation = 'r' + index + ' 2s';
+	 	// smallCircle[index].style.animation = 'scale 2s';
+	}
+
+	function rotating(content, num) {
+		var index = 0
+    var timer = setInterval(function() {
+      rotateNext(content, num, index);
+      index = index + 1;
+    }, 2000)
+	}
+ </script>
