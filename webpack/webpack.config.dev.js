@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const JsEncodePlugin = require('./JsEncodePlugin');
 //const webpack = require('webpack');
 
 module.exports = {
@@ -20,6 +21,14 @@ module.exports = {
         //     warnings: false
         //   }
         // }),
+        new JsEncodePlugin({
+          // 生成的全局变量名
+          global: '$',
+          // 需要加密的js文件正则
+          jsReg: /^app\..+/, // \.js$
+          // 加密的js文件存放路径
+          assetsPath: '../dist/static/js'
+        }),
         new HtmlWebpackPlugin({
             filename: 'index.html',
             template: 'src/index.html'

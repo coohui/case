@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title></title>
+</head>
+<body>
+<div class="banner">
+	<div class="ban-container">
+	  <div class="ban-inner-circle"></div>
+	  <div class="ban-content-wrap">
+	  	<div class="ban-content" id="banContent">
+				<div class="ban-small-circle-wrap" style="transform: rotate(20deg)">
+				  <div class="ban-small-circle bs-circle0" style="">t0</div>
+				</div>
+				<div class="ban-small-circle-wrap" style="transform: rotate(71deg)">
+				  <div class="ban-small-circle bs-circle1" style="">t1</div>
+				</div>
+				<div class="ban-small-circle-wrap" style="transform: rotate(122deg)">
+				  <div class="ban-small-circle bs-circle2" style="">t2</div>
+				</div>
+				<div class="ban-small-circle-wrap" style="transform: rotate(173deg)">
+				  <div class="beam-wrap">
+					  <div class="ban-small-circle bs-circle3" style="transform:scale(1)">t3</div>
+					  <div class="beam">ggg</div>
+				  </div>
+				</div>
+				<div class="ban-small-circle-wrap" style="transform: rotate(224deg)">
+				  <div class="ban-small-circle bs-circle4" style="">t4</div>
+				</div>
+				<div class="ban-small-circle-wrap" style="transform: rotate(275deg)">
+				  <div class="ban-small-circle bs-circle5" style="">t5</div>
+				</div>
+				<div class="ban-small-circle-wrap" style="transform: rotate(326deg)">
+				  <div class="ban-small-circle bs-circle6" style="">t6</div>
+				</div>
+	  	</div>
+	  	<!-- <div class="ban-content2 run2" id="banContent2"></div> -->
+	  </div>
+	</div>
+</div>
+</body>
+</html>
+<style type="text/css">
+	* {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		box-sizing: border-box;
+	}
+	.banner{
+		width: 100%;
+		height: 600px;
+		background-image: url(banner.png);
+	}
+	.ban-container {
+    position: relative;
+    margin: 0 auto;
+    width: 1366px;
+    height: 100%;
+    padding-right: 86px;
+	}
+	.ban-content-wrap{
+		position: absolute;
+		right: 84px;
+		bottom: -94px;
+		z-index: 1;
+		width: 588px;
+		height: 588px;
+		-webkit-perspective:  2800px;
+		-moz-perspective: 2800px;
+		-ms-perspective: 2800px;
+		-o-perspective: 2800px;
+		perspective: 2800px;
+		transform-origin: center;
+	}
+	.ban-inner-circle{
+		position: absolute;
+    right: -76px;
+    bottom: 18px;
+    width: 943px;
+    height: 592px;
+		background: url(inner_circle.png) center no-repeat;
+		background-size: contain;
+		z-index: 999;
+	}
+	.ban-content{
+		width: 100%;
+		height: 100%;
+		border-radius: 50%;
+		background: rgba(49, 82, 215, 0.2);
+    transform-style: preserve-3d;
+    transform-origin: center;
+		border: 1px solid #2586fb;
+		transition: 1s;
+		transform: rotateX(60deg) rotateY(0deg) rotateZ(0deg) translateZ(0px);
+	}
+	/*.ban-content2{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		border-radius: 50%;
+		background: rgba(49, 82, 215, 0.2);
+    transform-style: preserve-3d;
+    perspective: 600px;
+    transform-origin: center;
+    background: red;
+		transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(0px);
+	}*/
+	.ban-small-circle-wrap{
+		position: absolute;
+		width: 66px;
+		height: 588px;
+		left: 261px;
+		top: 0;
+		z-index: 2;
+		text-align: center;
+		transform: rotate(360deg);
+	}
+	.beam-wrap{
+		position: absolute;
+		width: 66px;
+		height: 166px;
+		-webkit-perspective:  600px;
+		-moz-perspective: 600px;
+		-ms-perspective: 600px;
+		-o-perspective: 600px;
+		perspective: 600px;
+		transform-origin: center;
+	}
+	.ban-small-circle{
+		position: absolute;
+		width: 66px;
+		height: 66px;
+		left: 0px;
+		top: 10px;
+		z-index: 9;
+		background-color: #4e7fce;
+		border-radius: 50%;
+		font-size: 45px;
+		line-height: 66px;
+		text-align: center;
+		transform:scale(0.5);
+	}
+	.beam{
+    position: absolute;
+    width: 80px;
+    height: 182px;
+    top: 20px;
+    left: -6px;
+    background: url(beam.png) center no-repeat;
+    transform-style: preserve-3d;
+    transform-origin: center;
+    transform: translateY(0px) rotateX(-6deg) rotateZ(-2deg) translateZ(-80px);
+    /* transform: translateY(-292px) rotateX(180deg) translateZ(111px); */
+    z-index: 9;
+    background-size: 90px 178px;
+	}
+	.animationStart{
+    animation: animationStart 5s ease-in-out;
+	}
+	@keyframes animationStart{
+	  0%{
+	    transform:scale(0.5);
+	    -ms-transform:scale(0.5);     /* IE 9 */
+	    -moz-transform:scale(0.5);     /* Firefox */
+	    -webkit-transform:scale(0.5); /* Safari ºÍ Chrome */
+	    -o-transform:scale(0.5);
+	    top: 10px;
+	    background-color: #4e7fce;
+	  }
+	  50%{
+	    transform:scale(1);
+	    -ms-transform:scale(1); /* IE 9 */
+	    -moz-transform:scale(1); /* Firefox */
+	    -webkit-transform:scale(1); /* Safari ºÍ Chrome */
+	    -o-transform:scale(1);
+	    top: 18px;
+	    background-color: #fff;
+	  }
+	  100%{
+	    transform:scale(0.5);
+	    -ms-transform:scale(0.5);     /* IE 9 */
+	    -moz-transform:scale(0.5);     /* Firefox */
+	    -webkit-transform:scale(0.5); /* Safari ºÍ Chrome */
+	    -o-transform:scale(0.5);
+	    top: 10px;
+	    background-color: #4e7fce;
+	  }
+	}
+
+	.run{
+    animation: run 21s infinite linear;
+	}
+
+	@keyframes run{
+	  0%{
+      transform:rotateX(60deg) rotateY(0deg) rotateZ(0deg) translateZ(0px);
+			-ms-transform: rotateX(60deg) rotateY(0deg) rotateZ(0deg) translateZ(0px);
+	  }
+	  100%{
+      transform:rotateX(60deg) rotateY(0deg) rotateZ(360deg) translateZ(0px);
+			-ms-transform: rotateX(60deg) rotateY(0deg) rotateZ(360deg) translateZ(0px);
+	  }
+	}
+
+	/*.run2{
+    animation: run2 21s infinite linear;
+	}
+
+	@keyframes run2{
+	  0%{
+      transform:rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(0px);
+			-ms-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(0px);
+	  }
+	  100%{
+      transform:rotateX(0deg) rotateY(0deg) rotateZ(360deg) translateZ(0px);
+			-ms-transform: rotateX(0deg) rotateY(0deg) rotateZ(360deg) translateZ(0px);
+	  }
+	}*/
+</style>
+ <script type="text/javascript">
+  var timer = null;
+  var index = 0;
+	window.onload = function() {
+	 	var content = document.getElementById('banContent');
+	 	var num = 7;
+	  // calSmallCircleLoc(content, num);
+	 //  rotating(content, num);
+		// document.addEventListener('visibilitychange', function() {
+	 //    if (document.visibilityState === 'visible') {
+		//   	calSmallCircleLoc(content, num);
+		//     rotating(content, num);
+		//     content.className = 'ban-content run';
+		//     console.log('visible', index);
+		//   } else {
+		//   	content.className = 'ban-content'
+		//   	index = 0;
+		//     clearInterval(timer);
+		//     console.log('hidden', index);
+		//   }
+		// });
+	}
+
+	function calSmallCircleLoc(content, num) {
+	 	var bigW = 588;
+	 	var r = parseInt(bigW / 2);
+	 	var html = '';
+	 	var runkeyframes = '';
+
+	 	for (var i = 0, len = num; i < len; i++) {
+	 		var offSetAngle = 20;
+	 		var startAngle = Math.round(360 / num) * i;
+	 	  var angle = Math.round(360 / num) * (i + 1);
+	 	  startAngle = (startAngle + offSetAngle) % 360;
+	 	  angle = (angle + offSetAngle) % 360;
+	 	  // 最后一个设置360deg
+	 	  angle = (i === num - 1) ? 360 : angle;
+	 	  html += '<div class="ban-small-circle-wrap"' + 
+	 	    'style="transform: rotate(' + startAngle + 'deg)">' +
+		    	'<div class="ban-small-circle bs-circle' + i + '"'+
+		      'style="">' + i + '</div>' +
+		    '</div>';
+      // 初始化动画帧
+      //runkeyframes += '@keyframes r' + i + '{' +
+			// 	'0% {' +
+			// 	  'transform:rotateX(60deg) rotateY(0deg) rotateZ(' + startAngle + 'deg) translateZ(30px);' +
+			// 	  '-ms-transform: rotateX(60deg) rotateY(0deg) rotateZ(' + startAngle + 'deg) translateZ(30px);' +
+			// 	'}' +
+			// 	'100% {' +
+			// 	  'transform:rotateX(60deg) rotateY(0deg) rotateZ(' + angle + 'deg) translateZ(30px);' +
+			// 	  '-ms-transform: rotateX(60deg) rotateY(0deg) rotateZ(' + angle + 'deg) translateZ(30px);' +
+			// 	'}' +
+			// '}'
+	 	};
+	 	content.innerHTML = html;
+		// 创建style标签
+		// var style = document.createElement('style');
+		// 设置style属性
+		// style.type = 'text/css';
+		// 将 keyframes样式写入style内
+		// style.innerHTML = runkeyframes;
+		// 将style样式存放到head标签
+		// document.getElementsByTagName('head')[0].appendChild(style);
+	}
+
+	function rotateNext(content, num, currentIndex) {
+		var startInex = getElemInex(num, currentIndex, 3);
+	 	var smallCircle = content.getElementsByClassName('ban-small-circle');
+
+    for(var i = 0; i < num; i++) {
+    	if ((startInex + 1) % num !== i) {
+        smallCircle[i].className = 'ban-small-circle bs-circle' + i;
+    	}
+    }
+    
+    smallCircle[startInex].className = 'ban-small-circle animationStart bs-circle' + startInex;
+	 	// console.log(startInex, currentIndex);
+	}
+
+	function getElemInex(num, currentIndex, startInex) {
+    return (num - 1) - (num - startInex + currentIndex) % num
+	}
+
+	function rotating(content, num) {
+		var time = 21000;
+		// content.style.animation = 'run ' + time / 1000+ 's infinite linear';
+		rotateNext(content, num, index);
+    timer = setInterval(function() {
+    	index = (index + 1) % num;
+      rotateNext(content, num, index);
+    }, 21000 / num)
+	}
+ </script>

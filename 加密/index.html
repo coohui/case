@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>mint-vue-project</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>11111</title>
+  </head>
+  <body>
+  sdfsd
+  </body>
+ <script>
+	(function(obj, res) {
+	    function sha1(str1) {
+		   return str1
+		}
+		let url = res.url
+		let noncestr = localDb.getCookie('noncestr') || ['']
+		let timestamp = localDb.getCookie('timestamp') || [0]
+		noncestr = Array.isArray(noncestr) ? noncestr[0] : ''
+		timestamp = Array.isArray(timestamp) ? timestamp[0] : 0
+
+		url = encodeURIComponent(url)
+		let params = Object.assign({}, res.data || {}, {'noncestr': noncestr, 'timestamp': timestamp, 'url': url})
+		params = util.objKeySort(params, 'down') // 对象键按ASCII码排序
+		// 与后台规定的版本号标识
+		let code = [{
+		  ver: '2.0',
+		  val: '8ab6049a1afd2a9ec2df18262b53a5d6'
+		}]
+
+		// let obj = {}
+		let str1 = ''
+		// 拼接参数
+		for (let key in params) {
+		  // 因为axios插件会把值为undefined的参数过滤掉，所以加标签的时候也得过滤
+		  if (key != 'ver' && key != 'sign' && String(params[key]) != 'undefined') {
+			let val = ''
+
+			if (params[key] !== null) {
+			  val = params[key]
+			}
+
+			str1 += ((key + '=' + val) + '&')
+		  }
+		}
+
+		str1 = str1.slice(0, -1).toLowerCase() // 去掉最后一位多余的&,并转成小写
+		let str2 = sha1(str1) // sha1加密
+		let len = code.length - 1
+		let str3 = md5(str2 + code[len].ver + code[len].val) // md5加密
+		if (vuex.state.signLog || res.url == vuex.state.signUrlLog) {
+		  // console.log('str1', str1)
+		  // console.log('str2', str2)
+		  // console.log('str3' + str2 + code[len].ver + code[len].val)
+		  // console.log('md5str3' + str3)
+		}
+
+		// 把后台需要的签名等字段返回出去
+		obj.timestamp = timestamp
+		obj.sign = str3
+		obj.noncestr = noncestr
+		obj.ver = code[code.length - 1].ver
+	})(window, {
+	   url:'www.test.com',
+	   a:1,
+	   b:2
+	})
+	
+	  let obj = {
+		timestamp: window.timestamp,
+		sign: window.sign,
+		noncestr: window.noncestr,
+		ver: window.ver
+	  }
+      console.log(obj)
+ </script>
+</html>

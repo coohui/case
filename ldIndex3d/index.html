@@ -9,40 +9,35 @@
 <div class="banner">
 	<div class="ban-container">
 	  <div class="ban-inner-circle"></div>
+	  <div class="wrapper">
+	    <div class="beam">
+			  <ul class="bg-bubbles"></ul>
+			</div>
+			<div class="gear"></div>
+	  </div>
 	  <div class="ban-content-wrap">
 	  	<div class="ban-content" id="banContent">
-				<div class="ban-small-circle-wrap" style="transform: rotate(20deg)">
-				  <div class="ban-small-circle bs-circle0" style="">t0</div>
-				</div>
-				<div class="ban-small-circle-wrap" style="transform: rotate(71deg)">
-				  <div class="ban-small-circle bs-circle1" style="">t1</div>
-				</div>
-				<div class="ban-small-circle-wrap" style="transform: rotate(122deg)">
-				  <div class="ban-small-circle bs-circle2" style="">t2</div>
-				</div>
-				<div class="ban-small-circle-wrap" style="transform: rotate(173deg)">
-				  <div class="beam-wrap">
-					  <div class="ban-small-circle bs-circle3" style="transform:scale(1)">t3</div>
-					  <div class="beam">ggg</div>
-				  </div>
-				</div>
-				<div class="ban-small-circle-wrap" style="transform: rotate(224deg)">
-				  <div class="ban-small-circle bs-circle4" style="">t4</div>
-				</div>
-				<div class="ban-small-circle-wrap" style="transform: rotate(275deg)">
-				  <div class="ban-small-circle bs-circle5" style="">t5</div>
-				</div>
-				<div class="ban-small-circle-wrap" style="transform: rotate(326deg)">
-				  <div class="ban-small-circle bs-circle6" style="">t6</div>
-				</div>
+        <div class="ban-small-circle-wrap" style="transform: rotate(20deg)"><div class="ban-small-circle bs-circle0" style="">0</div></div>
+        <div class="ban-small-circle-wrap" style="transform: rotate(71deg)"><div class="ban-small-circle bs-circle1" style="">1</div></div>
+        <div class="ban-small-circle-wrap" style="transform: rotate(122deg)"><div class="ban-small-circle bs-circle2" style=""></div></div>
+        <div class="ban-small-circle-wrap" style="transform: rotate(173deg)"><div class="ban-small-circle bs-circle3" style="">3</div></div>
+        <div class="ban-small-circle-wrap" style="transform: rotate(224deg)"><div class="ban-small-circle bs-circle4" style="">4</div></div>
+        <div class="ban-small-circle-wrap" style="transform: rotate(275deg)"><div class="ban-small-circle bs-circle5" style="">5</div></div>
+        <div class="ban-small-circle-wrap" style="transform: rotate(326deg)"><div class="ban-small-circle bs-circle6" style="">6</div></div>
 	  	</div>
-	  	<!-- <div class="ban-content2 run2" id="banContent2"></div> -->
 	  </div>
 	</div>
+	<div id="btn">run</div>
 </div>
 </body>
 </html>
 <style type="text/css">
+  #btn{
+  	cursor: pointer;
+  	text-align: right;
+  	font-size: 24px;
+  	margin-right: 30px;
+  }
 	* {
 		margin: 0;
 		padding: 0;
@@ -55,16 +50,16 @@
 		background-image: url(banner.png);
 	}
 	.ban-container {
-    position: relative;
-    margin: 0 auto;
-    width: 1366px;
-    height: 100%;
-    padding-right: 86px;
+	  position: relative;
+	  margin: 0 auto;
+	  width: 1366px;
+	  height: 100%;
+	  padding-right: 86px;
 	}
 	.ban-content-wrap{
 		position: absolute;
 		right: 84px;
-		bottom: -122px;
+		bottom: -94px;
 		z-index: 1;
 		width: 588px;
 		height: 588px;
@@ -77,10 +72,10 @@
 	}
 	.ban-inner-circle{
 		position: absolute;
-    right: -76px;
-    bottom: 18px;
-    width: 943px;
-    height: 592px;
+	  right: -76px;
+	  bottom: 18px;
+	  width: 943px;
+	  height: 592px;
 		background: url(inner_circle.png) center no-repeat;
 		background-size: contain;
 		z-index: 999;
@@ -90,27 +85,12 @@
 		height: 100%;
 		border-radius: 50%;
 		background: rgba(49, 82, 215, 0.2);
-    transform-style: preserve-3d;
-    perspective: 600px;
-    transform-origin: center;
+	  transform-style: preserve-3d;
+	  transform-origin: center;
 		border: 1px solid #2586fb;
-		transition: 1s; 
-		/*transform: rotateX(60deg) rotateY(0deg) rotateZ(0deg) translateZ(30px);*/
+		transition: 1s;
+		transform: rotateX(60deg) rotateY(0deg) rotateZ(0deg) translateZ(0px);
 	}
-	/*.ban-content2{
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		border-radius: 50%;
-		background: rgba(49, 82, 215, 0.2);
-    transform-style: preserve-3d;
-    perspective: 600px;
-    transform-origin: center;
-    background: red;
-		transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(0px);
-	}*/
 	.ban-small-circle-wrap{
 		position: absolute;
 		width: 66px;
@@ -121,17 +101,6 @@
 		text-align: center;
 		transform: rotate(360deg);
 	}
-	.beam-wrap{
-		position: absolute;
-		width: 66px;
-		height: 166px;
-		-webkit-perspective:  100px;
-		-moz-perspective: 100px;
-		-ms-perspective: 100px;
-		-o-perspective: 100px;
-		perspective: 100px;
-		transform-origin: center;
-	}
 	.ban-small-circle{
 		position: absolute;
 		width: 66px;
@@ -139,38 +108,82 @@
 		left: 0px;
 		top: 10px;
 		z-index: 9;
-		background-color: #4e7fce;
+		background: #4e7fce;
 		border-radius: 50%;
-		font-size: 45px;
-		line-height: 66px;
+		font-size: 66px;
 		text-align: center;
 		transform:scale(0.5);
 	}
-	.beam{
-		position: absolute;
-    width: 130px;
-    height: 260px;
-    background: url(beam.png) center no-repeat;
-    transform: translateY(-292px) rotateX(180deg) translateZ(111px);
-    z-index: 9;
-    background-size: contain;
-		/*transform: rotateX(-60deg) rotateY(0deg) rotateZ(0deg) translateZ(-30px);*/
-		/*background-size: contain;*/
+	.animationIn{
+    animation: bigIn 1s linear forwards;
 	}
-	.animationStart{
-    animation: animationStart 5s ease-in-out;
+  .animationOut{
+  	animation: smallOut 2s linear;
+  }
+  /* 光束 */
+  .beam{
+    position: absolute;
+    width: 100px;
+    height: 200px;
+    top: 362px;
+    right: 388px;
+    background: url(beam.png) center bottom no-repeat;
+    z-index: 1000;
+    background-size: 100px auto;
+    opacity: 0;
 	}
-	@keyframes animationStart{
+	.beamShow{
+		animation: cylinderIn 4s ease-in-out 1s forwards;
+	}
+  /* 上升气泡 */
+  .bg-bubbles {
+    position: absolute;
+    top: -30px;
+    left: 14px;
+    width: 72px;
+    height: 200px;
+    z-index: 1;
+    overflow: hidden;
+  }
+  .bg-bubbles li {
+    position: absolute;
+    list-style: none;
+    display: block;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: rgba(10, 230, 255, 1);
+    bottom: -10px;
+    -webkit-animation: square 4s linear infinite;
+    animation: square 4s linear infinite;
+  }
+  /* 齿轮 */
+  .gear{
+    position: absolute;
+    top: 488px;
+    right: 412px;
+  	width: 46px;
+  	height: 46px;
+  	z-index: 1010;
+  	background: url(gear.png) center no-repeat;
+  	opacity: 0;
+  }
+
+  .rotateUp{
+  	animation: rotateUp 1s ease-in-out 1s forwards;
+  }
+
+	@keyframes bigIn{
 	  0%{
 	    transform:scale(0.5);
 	    -ms-transform:scale(0.5);     /* IE 9 */
 	    -moz-transform:scale(0.5);     /* Firefox */
 	    -webkit-transform:scale(0.5); /* Safari ºÍ Chrome */
 	    -o-transform:scale(0.5);
-	    top: 10px;
+      top: 10px;
 	    background-color: #4e7fce;
 	  }
-	  50%{
+	  100%{
 	    transform:scale(1);
 	    -ms-transform:scale(1); /* IE 9 */
 	    -moz-transform:scale(1); /* Firefox */
@@ -179,68 +192,66 @@
 	    top: 18px;
 	    background-color: #fff;
 	  }
-	  100%{
-	    transform:scale(0.5);
-	    -ms-transform:scale(0.5);     /* IE 9 */
-	    -moz-transform:scale(0.5);     /* Firefox */
-	    -webkit-transform:scale(0.5); /* Safari ºÍ Chrome */
-	    -o-transform:scale(0.5);
-	    top: 10px;
-	    background-color: #4e7fce;
-	  }
 	}
 
-	.run{
-    animation: run 21s infinite linear;
-	}
-
-	@keyframes run{
+	@keyframes cylinderIn{
 	  0%{
-      transform:rotateX(60deg) rotateY(0deg) rotateZ(0deg) translateZ(30px);
-			-ms-transform: rotateX(60deg) rotateY(0deg) rotateZ(0deg) translateZ(30px);
+	    opacity: 0;
+	  }
+	  30%{
+	    opacity: 1;
+	  }
+	  70%{
+	    opacity: 1;
 	  }
 	  100%{
-      transform:rotateX(60deg) rotateY(0deg) rotateZ(360deg) translateZ(30px);
-			-ms-transform: rotateX(60deg) rotateY(0deg) rotateZ(360deg) translateZ(30px);
+	    opacity: 1;
 	  }
 	}
 
-	/*.run2{
-    animation: run2 21s infinite linear;
-	}
+  @keyframes square {
+    0% {
+      -webkit-transform: translate(0px,0px);
+      transform: translate(0px,0px);
+      opacity: 1
+    }
+    25% {
+      -webkit-transform: translate(4px,-45px);
+      transform: translate(4px,-45px);
+      opacity: 0.75
+    }
+    50% {
+      -webkit-transform: translate(2px,-90px);
+      transform: translate(2px,-90px);
+      opacity: 0.5
+    }
+    100% {
+      -webkit-transform: translate(0px,-180px);
+      transform: translate(0px,-180px);
+      opacity: 0
+    }
+  }
 
-	@keyframes run2{
+	@keyframes rotateUp {
 	  0%{
-      transform:rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(0px);
-			-ms-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(0px);
+	  	opacity: 0;
+	    transform: translate(0px,0px) rotate(0deg);
 	  }
 	  100%{
-      transform:rotateX(0deg) rotateY(0deg) rotateZ(360deg) translateZ(0px);
-			-ms-transform: rotateX(0deg) rotateY(0deg) rotateZ(360deg) translateZ(0px);
+	  	opacity: 1;
+	    transform: translate(0px,-60px) rotate(360deg);
 	  }
-	}*/
+	}
 </style>
  <script type="text/javascript">
-  var timer = null;
-  var index = 0;
+  var beam = document.getElementsByClassName('beam')[0];
+  var gear = document.getElementsByClassName('gear')[0];
 	window.onload = function() {
 	 	var content = document.getElementById('banContent');
 	 	var num = 7;
-	  // calSmallCircleLoc(content, num);
-	 //  rotating(content, num);
-		// document.addEventListener('visibilitychange', function() {
-	 //    if (document.visibilityState === 'visible') {
-		//   	calSmallCircleLoc(content, num);
-		//     rotating(content, num);
-		//     content.className = 'ban-content run';
-		//     console.log('visible', index);
-		//   } else {
-		//   	content.className = 'ban-content'
-		//   	index = 0;
-		//     clearInterval(timer);
-		//     console.log('hidden', index);
-		//   }
-		// });
+	  calSmallCircleLoc(content, num);
+	  rotating(content, num);
+	  bubbles();
 	}
 
 	function calSmallCircleLoc(content, num) {
@@ -255,6 +266,7 @@
 	 	  var angle = Math.round(360 / num) * (i + 1);
 	 	  startAngle = (startAngle + offSetAngle) % 360;
 	 	  angle = (angle + offSetAngle) % 360;
+	 	  console.log(startAngle)
 	 	  // 最后一个设置360deg
 	 	  angle = (i === num - 1) ? 360 : angle;
 	 	  html += '<div class="ban-small-circle-wrap"' + 
@@ -263,40 +275,45 @@
 		      'style="">' + i + '</div>' +
 		    '</div>';
       // 初始化动画帧
-      //runkeyframes += '@keyframes r' + i + '{' +
-			// 	'0% {' +
-			// 	  'transform:rotateX(60deg) rotateY(0deg) rotateZ(' + startAngle + 'deg) translateZ(30px);' +
-			// 	  '-ms-transform: rotateX(60deg) rotateY(0deg) rotateZ(' + startAngle + 'deg) translateZ(30px);' +
-			// 	'}' +
-			// 	'100% {' +
-			// 	  'transform:rotateX(60deg) rotateY(0deg) rotateZ(' + angle + 'deg) translateZ(30px);' +
-			// 	  '-ms-transform: rotateX(60deg) rotateY(0deg) rotateZ(' + angle + 'deg) translateZ(30px);' +
-			// 	'}' +
-			// '}'
+      runkeyframes += '@keyframes r' + i + '{' +
+				'0% {' +
+				  'transform:rotateX(60deg) rotateY(0deg) rotateZ(' + startAngle + 'deg) translateZ(0px);' +
+				  '-ms-transform: rotateX(60deg) rotateY(0deg) rotateZ(' + startAngle + 'deg) translateZ(0px);' +
+				'}' +
+				'100% {' +
+				  'transform:rotateX(60deg) rotateY(0deg) rotateZ(' + angle + 'deg) translateZ(0px);' +
+				  '-ms-transform: rotateX(60deg) rotateY(0deg) rotateZ(' + angle + 'deg) translateZ(0px);' +
+				'}' +
+			'}'
 	 	};
-	 	content.innerHTML = html;
+	 	// content.innerHTML = html;
 		// 创建style标签
-		// var style = document.createElement('style');
+		var style = document.createElement('style');
 		// 设置style属性
-		// style.type = 'text/css';
+		style.type = 'text/css';
 		// 将 keyframes样式写入style内
-		// style.innerHTML = runkeyframes;
+		style.innerHTML = runkeyframes;
 		// 将style样式存放到head标签
-		// document.getElementsByTagName('head')[0].appendChild(style);
+		document.getElementsByTagName('head')[0].appendChild(style);
 	}
 
 	function rotateNext(content, num, currentIndex) {
 		var startInex = getElemInex(num, currentIndex, 3);
 	 	var smallCircle = content.getElementsByClassName('ban-small-circle');
 
+	 	content.style.animation = 'r' + currentIndex + ' 1s linear forwards';
     for(var i = 0; i < num; i++) {
     	if ((startInex + 1) % num !== i) {
         smallCircle[i].className = 'ban-small-circle bs-circle' + i;
     	}
     }
     
-    smallCircle[startInex].className = 'ban-small-circle animationStart bs-circle' + startInex;
-	 	// console.log(startInex, currentIndex);
+    smallCircle[startInex].className = 'ban-small-circle animationIn bs-circle' + startInex;
+    beam.className = 'beam beamShow';
+    gear.className = 'gear rotateUp';
+    var timer = setTimeout(function() {
+      beam.className = 'beam';
+    }, 4000000)
 	}
 
 	function getElemInex(num, currentIndex, startInex) {
@@ -304,12 +321,34 @@
 	}
 
 	function rotating(content, num) {
-		var time = 21000;
-		// content.style.animation = 'run ' + time / 1000+ 's infinite linear';
-		rotateNext(content, num, index);
-    timer = setInterval(function() {
-    	index = (index + 1) % num;
+		var index = -1;
+		// rotateNext(content, num, index);
+    // var timer = setInterval(function() {
+    // 	index = (index + 1) % num;
+    //   rotateNext(content, num, index);
+    // }, 21000 / num)
+    var oBtn = document.getElementById('btn');
+    oBtn.onclick = function() {
+      index = (index + 1) % num;
+      console.log(index)
+      // beam.style.animation = '';
       rotateNext(content, num, index);
-    }, 21000 / num)
+    }
+	}
+
+	function bubbles() {
+    let bubbles = document.getElementsByClassName('bg-bubbles')[0];
+    let num = 18;
+    let str = '';
+ 
+    for (let i = 0; i < num; i++) {
+      str += '<li></li>';
+    }
+    bubbles.innerHTML = str
+    let aLis = bubbles.getElementsByTagName('li');
+    for (let i = 0; i < num; i++) {
+      aLis[i].style.left = Math.round(Math.random() * 8500) / 100 + '%';
+      aLis[i].style.animationDelay = Math.round(Math.random() * i * 100) / 100 + 's';
+    }
 	}
  </script>
